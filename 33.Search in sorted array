@@ -1,0 +1,22 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int k=0;
+        int i;
+        for(i=0;i<nums.length;i++)
+        {
+            if(nums[i]==target)
+            {
+                k=i;
+                break;
+                
+            }
+        }
+        if(k==0 && i!=0)
+        {
+            return -1;
+        }
+            else{
+                return k;
+            }
+    }
+}

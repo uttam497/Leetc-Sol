@@ -1,0 +1,45 @@
+class Solution {
+    public int trap(int[] height) {
+        int high=0;
+        int k=0;
+        int max=height[0];
+        int left[]=new int[height.length];
+        int right[]=new int[height.length];
+        int a=0;
+        for(int i=0;i<height.length;i++)
+        {
+            if(max<=height[i])
+               {
+                max=height[i];
+                left[a]=max;
+                a++;
+            }
+            else{
+                left[a]=max;
+                a++;
+            }
+        }
+           int max1=height[height.length-1];
+            int b=height.length-1;
+             for(int i=height.length-1;i>=0;i--)
+        {
+            if(max1<=height[i])
+               {
+                max1=height[i];
+                right[b--]=max1;
+            }
+            else{
+                right[b--]=max1;  
+            }
+            
+        }
+   
+    // ------------------------------------------------------    
+       for(int i=0;i<height.length;i++)
+       {
+            k+=Math.min(left[i],right[i])-height[i];
+        }
+       return k;
+        
+    }
+}

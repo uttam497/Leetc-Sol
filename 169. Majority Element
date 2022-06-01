@@ -1,0 +1,39 @@
+/*class Solution {
+    public int majorityElement(int[] nums) {
+        int n=nums.length;
+        int a=1;
+        int x=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(nums[i]==nums[j])
+                {
+                    a++;
+                }
+            }
+            
+            if(a>n/2)
+            {
+                x=i;
+                break;
+            }
+                else {
+                    a=1;
+                }
+            
+        }
+        return nums[x];
+        
+    }
+}*/
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        
+        int mid = nums.length / 2;
+        
+        return nums[mid];
+    }
+}
+//For the array element to come more than n/2 times it will cover more than n/2 spaces in an //array so the middle element will be the  required elemnt.

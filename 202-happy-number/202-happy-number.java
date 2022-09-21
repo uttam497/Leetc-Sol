@@ -3,26 +3,22 @@ class Solution {
     
     public boolean isHappy(int n) 
     {
-        int k=0;
-             Map.put(k,-1);
-            return Happy(n,++k);
+       
+            return Happy(n);
             
     }
-    public boolean Happy(int n,int k)
+    public boolean Happy(int n)
     {
         if(n==1)
-            {
-                return true;
-            }
-        if(Map.containsValue(n))
         {
-            return false;
+            return true;
         }
         
+        
         Map.put(n,Map.getOrDefault(n, 0)+1);
-
-            if(Map.get(n) > 1) return false;
-        int sum=0;
+        if(Map.get(n) > 1) return false;
+       
+            int sum=0;
             while(n!=0)
             {
                 int rem=n%10;
@@ -30,7 +26,7 @@ class Solution {
                 n=n/10;
             }
         
-        return Happy(sum,k++);
+        return Happy(sum);
     }
     
 }

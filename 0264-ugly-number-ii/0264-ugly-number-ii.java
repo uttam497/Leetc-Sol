@@ -30,4 +30,6 @@ class Solution {
         return arr[n];
     
     }
+    
+    // check the note
 }

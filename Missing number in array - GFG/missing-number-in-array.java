@@ -28,17 +28,20 @@ class GFG {
 // User function Template for Java
 
 class Solution {
-    int missingNumber(int array[], int n) {
+    int missingNumber(int arr[], int n) {
         // Your Code Here
-        Arrays.sort(array);
-        //quickSort(array,n);
+        HashSet<Integer> map=new HashSet<Integer>();
         
-        int a=1;
-        for(int i=0;i<n-1;i++){
-            if(array[i]!=a){
+        for(int i=0;i<arr.length;i++)
+        {
+            map.add(arr[i]);
+        }
+        int a=0;
+        for(int i=1;i<=n;i++){
+            if(!map.contains(i)){
+                a=i;
                 break;
             }
-            ++a;
         }
         return a;
     }
